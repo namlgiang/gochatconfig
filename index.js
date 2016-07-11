@@ -15,8 +15,9 @@ app.get('/', function(req, res) {
 });
 
 app.get('/servers', function(req, res) {
-  var geo = geoip.lookup(req.connection.remoteAddress);
-  console.log(req.connection.remoteAddress);
+  var ip = req.header('x-forwarded-for') || req.connection.remoteAddress;
+  var geo = geoip.lookup(ip);
+  console.log(ip);
   console.log(geo);
   res.send(geo);
 });
