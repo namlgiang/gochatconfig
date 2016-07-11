@@ -1,6 +1,8 @@
 var express = require("express");
 var app = express();
 
+app.enable('trust proxy');
+
 var servers = [];
 servers.push({
   url: "http://104.199.146.157:8080/",
@@ -12,7 +14,7 @@ app.get('/', function(req, res) {
 });
 
 app.get('/servers', function(req, res) {
-  res.send(JSON.stringify(req.connection));
+  res.send(req.connection.remoteAddress);
 });
 
 app.listen(8080, function(req, res) {
