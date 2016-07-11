@@ -1,6 +1,8 @@
 var express = require("express");
 var app = express();
 var geoip = require('geoip-lite');
+var requestIp = require('request-ip');
+app.use(requestIp.mw());
 
 app.enable('trust proxy');
 
@@ -15,7 +17,7 @@ app.get('/', function(req, res) {
 });
 
 app.get('/servers', function(req, res) {
-  var ip = req.header('x-forwarded-for') || req.connection.remoteAddress;
+  var ip = req.clientIp;
   var geo = geoip.lookup(ip);
   console.log(ip);
   console.log(geo);
