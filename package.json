@@ -18,7 +18,6 @@
   },
   "homepage": "https://github.com/namlgiang/gochatconfig#readme",
   "dependencies": {
-    "express": "^4.14.0",
-    "geoip-lite-country": "^1.1.3"
+    "express": "^4.14.0"
   }
 }
