@@ -17,11 +17,7 @@ app.get('/', function(req, res) {
 });
 
 app.get('/servers', function(req, res) {
-  var ip = req.clientIp;
-  var geo = geoip.lookup(ip);
-  console.log(ip);
-  console.log(geo);
-  res.send(geo);
+  res.send(servers);
 });
 
 app.listen(8080, function(req, res) {
