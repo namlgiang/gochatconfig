@@ -12,7 +12,7 @@ app.get('/', function(req, res) {
 });
 
 app.get('/servers', function(req, res) {
-  res.send(servers);
+  res.send(req.connection.remoteAddress);
 });
 
 app.listen(8080, function(req, res) {
