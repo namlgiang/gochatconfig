@@ -1,5 +1,6 @@
 var express = require("express");
 var app = express();
+var geoip = require('geoip-lite');
 
 app.enable('trust proxy');
 
@@ -14,7 +15,8 @@ app.get('/', function(req, res) {
 });
 
 app.get('/servers', function(req, res) {
-  res.send(req.ip);
+  var geo = geoip.lookup(req.ip);
+  res.send(geo);
 });
 
 app.listen(8080, function(req, res) {
