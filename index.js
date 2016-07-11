@@ -12,7 +12,7 @@ app.get('/', function(req, res) {
 });
 
 app.get('/servers', function(req, res) {
-  res.send(req.connection);
+  res.send(JSON.stringify(req.connection));
 });
 
 app.listen(8080, function(req, res) {
