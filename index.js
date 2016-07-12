@@ -1,8 +1,8 @@
 var express = require("express");
 var app = express();
-var geoip = require('geoip-lite');
-var requestIp = require('request-ip');
-app.use(requestIp.mw());
+// var geoip = require('geoip-lite');
+// var requestIp = require('request-ip');
+// app.use(requestIp.mw());
 
 app.enable('trust proxy');
 
