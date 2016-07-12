@@ -1,5 +1,9 @@
 var express = require("express");
 var app = express();
+
+var gcloud = require('gcloud');
+var datastore = gcloud.datastore();
+
 // var geoip = require('geoip-lite');
 // var requestIp = require('request-ip');
 // app.use(requestIp.mw());
@@ -21,7 +25,15 @@ servers.push({
 });
 
 app.get('/', function(req, res) {
-  res.send("Go Chat Server");
+
+
+  query = datastore.createQuery('Global Message');
+
+  datastore.runQuery(query, function (err, messages) {
+      res.send("Number of messages: " + messages.length);
+  });
+
+
 });
 
 app.get('/servers', function(req, res) {
