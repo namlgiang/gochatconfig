@@ -8,7 +8,15 @@ app.enable('trust proxy');
 
 var servers = [];
 servers.push({
-  url: "http://104.199.146.157:8080/",
+  url: "http://146.148.71.1:8080/",
+  region: "us"
+});
+servers.push({
+  url: "http://192.158.30.135:8080/",
+  region: "eu"
+});
+servers.push({
+  url: "http://104.155.231.179:8080/",
   region: "asia"
 });
 
