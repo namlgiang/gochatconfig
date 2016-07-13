@@ -40,6 +40,10 @@ app.get('/servers', function(req, res) {
   res.send(servers);
 });
 
+app.get('/minversion', function(req, res) {
+  res.send('1.0');
+});
+
 app.listen(8080, function(req, res) {
   console.log("Listening to 8080")
 });
