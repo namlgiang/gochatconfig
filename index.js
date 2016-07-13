@@ -26,7 +26,9 @@ app.get('/servers', function(req, res) {
 });
 
 app.get('/minversion', function(req, res) {
-  res.send('{minversion: 1.1}');
+  res.send({
+    minversion: 1.1
+  });
 });
 
 app.listen(8080, function(req, res) {
