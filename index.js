@@ -1,9 +1,6 @@
 var express = require("express");
 var app = express();
 
-var gcloud = require('gcloud');
-var datastore = gcloud.datastore();
-
 // var geoip = require('geoip-lite');
 // var requestIp = require('request-ip');
 // app.use(requestIp.mw());
@@ -22,18 +19,6 @@ servers.push({
 servers.push({
   url: "http://104.155.231.179:8080/",
   region: "asia"
-});
-
-app.get('/', function(req, res) {
-
-
-  query = datastore.createQuery('Global Message');
-
-  datastore.runQuery(query, function (err, messages) {
-      res.send("Number of messages: " + messages.length);
-  });
-
-
 });
 
 app.get('/servers', function(req, res) {
