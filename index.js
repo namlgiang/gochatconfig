@@ -13,11 +13,11 @@ servers.push({
   region: "us"
 });
 servers.push({
-  url: "http://192.158.30.135:8080/",
+  url: "http://146.148.71.1:8080/",
   region: "eu"
 });
 servers.push({
-  url: "http://104.155.231.179:8080/",
+  url: "http://146.148.71.1:8080/",
   region: "asia"
 });
 
@@ -31,6 +31,6 @@ app.get('/minversion', function(req, res) {
   });
 });
 
-app.listen(8080, function(req, res) {
-  console.log("Listening to 8080")
+app.listen(8081, function(req, res) {
+  console.log("Listening to 8081");
 });
