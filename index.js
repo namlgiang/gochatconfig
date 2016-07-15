@@ -9,15 +9,15 @@ app.enable('trust proxy');
 
 var servers = [];
 servers.push({
-  url: "http://146.148.71.1:8080/",
+  url: "http://seemslegitgames.com:8080/",
   region: "us"
 });
 servers.push({
-  url: "http://146.148.71.1:8080/",
+  url: "http://seemslegitgames.com:8080/",
   region: "eu"
 });
 servers.push({
-  url: "http://146.148.71.1:8080/",
+  url: "http://seemslegitgames.com:8080/",
   region: "asia"
 });
 
